@@ -96,7 +96,7 @@ $naitik = $facebook->api('/ryan.yacyshyn');
     <?php endif ?>
 
     <h3>Public profile of <?php echo $naitik['name']; ?></h3>
-    <img src="https://graph.facebook.com/naitik/picture">
+    <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
     <?php echo $naitik['name']; ?>
   </body>
 </html>
