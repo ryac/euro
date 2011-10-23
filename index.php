@@ -95,7 +95,7 @@ $naitik = $facebook->api('/ryan.yacyshyn');
       <strong><em>You are not Connected.</em></strong>
     <?php endif ?>
 
-    <h3>Public profile of Naitik</h3>
+    <h3>Public profile of <?php echo $naitik['name']; ?></h3>
     <img src="https://graph.facebook.com/naitik/picture">
     <?php echo $naitik['name']; ?>
   </body>
