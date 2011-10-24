@@ -46,12 +46,21 @@ class Euro extends CI_Controller {
 				$user = null;
 			}
 		}
-		$data['fbData'] = $user;
+
+		if ($user) {
+			$logoutUrl = $facebook->getLogoutUrl();
+		}
+		else {
+			$loginUrl = $facebook->getLoginUrl();
+		}
+
+		$data['user'] = $user;
+		$data['loginUrl'] = $loginUrl;
 		$this->load->view('euro_view', $data);
 	}
 
 	public function get_friends () {
-		echo ('returning friends..');
+		echo ('user_profile: ' . $this->fb->api('/me'));
 	}
 
 }

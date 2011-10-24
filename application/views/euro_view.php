@@ -9,7 +9,15 @@
 
 	<div id="root">
 		<p>euro</p>
-		<p><?php echo $fbData; ?></p>
+		<?php if ($user): ?>
+			<a href="<?php echo $logoutUrl; ?>">Logout</a>
+		<?php else: ?>
+			<div>
+				Login using OAuth 2.0 handled by the PHP SDK:
+				<a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
+			</div>
+		<?php endif ?>
+
 		<div id="flashContainer">
 			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
 		</div>
