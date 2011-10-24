@@ -70,7 +70,7 @@ $naitik = $facebook->api('/ryan.yacyshyn');
       }
 
       #content {
-        width: 760px;
+        width: 736px;
       }
 
     </style>
