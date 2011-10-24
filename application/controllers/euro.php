@@ -48,10 +48,10 @@ class Euro extends CI_Controller {
 		}
 
 		if ($user) {
-			$logoutUrl = $facebook->getLogoutUrl();
+			$logoutUrl = $this->fb->getLogoutUrl();
 		}
 		else {
-			$loginUrl = $facebook->getLoginUrl();
+			$loginUrl = $this->fb->getLoginUrl();
 		}
 
 		$data['user'] = $user;
