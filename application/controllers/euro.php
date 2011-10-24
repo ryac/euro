@@ -1,6 +1,22 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+define('FACEBOOK_APPID', '301783043168036');
+define('FACEBOOK_SECRET', '3862820b8345909f22cb74f337ca408a');
+
+require_once 'libs/facebook.php'; 
+
 class Euro extends CI_Controller {
+
+	private $fb;
+
+	public function __construct() {
+		parent::__construct();
+		$this->fb = new Facebook(array(
+			'appId' => FACEBOOK_APPID,
+			'secret' => FACEBOOK_SECRET
+		));
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -18,7 +34,20 @@ class Euro extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		$this->load->view('euro_view');
+		
+		$user = $this->fb->getUser();
+		
+		if ($user) {
+			try {
+				// Proceed knowing you have a logged in user who's authenticated.
+				$user_profile = $facebook->api('/me');
+			} catch (FacebookApiException $e) {
+				error_log($e);
+				$user = null;
+			}
+		}
+		$data['fbData'] = $user;
+		$this->load->view('euro_view', $data);
 	}
 
 	public function get_friends () {
