@@ -40,7 +40,7 @@ class Euro extends CI_Controller {
 		if ($user) {
 			try {
 				// Proceed knowing you have a logged in user who's authenticated.
-				$user_profile = $facebook->api('/me');
+				$user_profile = $this->fb->api('/me');
 			} catch (FacebookApiException $e) {
 				error_log($e);
 				$user = null;
