@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /euro/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /euro/index.php/$1 [L]
+

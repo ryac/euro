@@ -17,10 +17,14 @@ class Euro extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+	public function index() {
 		$this->load->view('euro_view');
 	}
+
+	public function get_friends () {
+		echo ('returning friends..');
+	}
+
 }
 
 /* End of file welcome.php */
