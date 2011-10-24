@@ -68,9 +68,15 @@ $naitik = $facebook->api('/ryan.yacyshyn');
       h1 a:hover {
         text-decoration: underline;
       }
+
+      #content {
+        width: 760px;
+      }
+
     </style>
   </head>
   <body>
+  <div id="content">
     <h1>php-sdk</h1>
 
     <?php if ($user): ?>
@@ -98,5 +104,6 @@ $naitik = $facebook->api('/ryan.yacyshyn');
     <h3>Public profile of <?php echo $naitik['name']; ?></h3>
     <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
     <?php echo $naitik['name']; ?>
+    </div>
   </body>
 </html>
