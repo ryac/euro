@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/euro/';
+$config['base_url']	= ($_SERVER['HTTPS'] ? "https" : "http") . '://' . $_SERVER['HTTP_HOST'] . 'euro/';  // 'http://localhost/euro/';
 
 /*
 |--------------------------------------------------------------------------
