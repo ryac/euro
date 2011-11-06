@@ -15,7 +15,7 @@
 |
 */
 //$config['base_url']	= ($_SERVER['HTTPS'] ? "https" : "http") . '://' . $_SERVER['HTTP_HOST'] . '/euro/';  // 'http://localhost/euro/';
-$config['base_url']	= 'http://www.ryac.ca/euro/';
+$config['base_url']	= 'https://www.ryac.ca/~ryacca/euro/';
 
 /*
 |--------------------------------------------------------------------------
